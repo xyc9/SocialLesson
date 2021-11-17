@@ -1,13 +1,15 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
 
 const Dialogs = () =>{
     return(
         <div>
             <div className="Dialogs_UserList">
                 <ul>
-                    <li><a href="http://localhost:3000/messages">user1</a></li>
-                    <li><a href="http://localhost:3000/messages">user1</a></li>
-                    <li><a href="http://localhost:3000/messages">user1</a></li>
+                    <li><NavLink to='/messages/1'>user1</NavLink></li>
+                    <li><NavLink to='/messages/2'>user1</NavLink></li>
+                    <li><NavLink to='/messages/3'>user1</NavLink></li>
+
                 </ul>
             </div>
         </div>
