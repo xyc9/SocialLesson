@@ -78,6 +78,9 @@ ul li {
   margin: 20px 0;
   align-items: center;
 }
+.Post-item p {
+  padding: 0 15px;
+}
 .Post-item img{
 width: 100px;
   height: 100px;
