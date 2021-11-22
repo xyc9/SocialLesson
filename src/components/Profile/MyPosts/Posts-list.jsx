@@ -5,17 +5,15 @@ const PostsList = () =>{
 
     let PostData = [
         { message : 'Первое сообщение' ,  likeCount : '0'},
-        { message : '2' ,  likeCount : '2'},
-        { message : '3' ,  likeCount : '3'}
-
+        { message : '212321312312312' ,  likeCount : '2'},
+        { message : '312312312312' ,  likeCount : '3'}
     ]
+    let PostArray = PostData.map((p)=><Post message={p.message} likeCount={p.likeCount}/>)
 
 
-    return(<div>
-        <Post message={PostData[0].message} likeCount={PostData[0].likeCount}/>
-        <Post message={PostData[1].message} likeCount={PostData[1].likeCount}/>
-        <Post message={PostData[2].message} likeCount={PostData[2].likeCount}/>
-
+    return(
+        <div>
+            {PostArray}
         </div>
         )
 }

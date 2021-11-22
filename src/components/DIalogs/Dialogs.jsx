@@ -37,29 +37,22 @@ const Dialogs = () => {
         {
             id:'3',message:'3'
         },
+        {
+            id:'14',message:'4'
+        },
     ]
-
+    let UserArray = UserData.map( (u) => <li><UserItem id={u.id} username={u.username}/></li>);
+    let DialogArray = DialogData.map( (d) => <li><UserDialog message={d.message} id={d.id}/></li>);
     return (
         <div className="Dialogs_page">
             <div className="Dialogs_UserList">
                 <ul>
-                    <li><UserItem id={UserData[0].id} username={UserData[0].username}/></li>
-                    <li><UserItem id={UserData[1].id} username={UserData[1].username}/></li>
-                    <li><UserItem id={UserData[2].id} username={UserData[2].username}/></li>
+                    {UserArray}
                 </ul>
             </div>
             <div className="Dialogs_message">
                 <ul>
-                    <li>
-                        <UserDialog message={DialogData[0].message}/>
-
-                    </li>
-                    <li>
-                        <UserDialog message={DialogData[1].message}/>
-                    </li>
-                    <li>
-                        <UserDialog message={DialogData[2].message}/>
-                    </li>
+                    {DialogArray}
                 </ul>
             </div>
         </div>

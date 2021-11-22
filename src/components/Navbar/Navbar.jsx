@@ -7,7 +7,7 @@ const Navbar = () => {
             <ul>
                 <li><NavLink to='/profile'>HOME</NavLink></li>
                 <li><NavLink to='/messages'>Messages</NavLink></li>
-                <li><NavLink to='/f riend'>Friend</NavLink></li>
+                <li><NavLink to='/friend'>Friend</NavLink></li>
             </ul>
         </nav>
     )
