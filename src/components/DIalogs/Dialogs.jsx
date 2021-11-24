@@ -1,19 +1,6 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
-
-const UserDialog = (props) => {
-    return (
-        <p>{props.message}</p>
-    )
-}
-
-const UserItem = (props) => {
-    let Link = "/messages/" + props.id;
-    return (
-        <NavLink to={Link}>{props.username}</NavLink>
-    )
-}
-
+import UserDialog from "./UserDialog/UserDialog";
+import UserItem from "./UserItem/UserItem";
 
 const Dialogs = () => {
     let UserData = [
