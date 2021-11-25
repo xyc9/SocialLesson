@@ -1,11 +1,11 @@
 import React from 'react';
 import NewPost from "./NewPost";
 import PostsList from "./Posts-list";
-const MyPosts = () =>{
+const MyPosts = (props) =>{
     return (
       <div>
         <NewPost/>
-        <PostsList/>
+        <PostsList PostData={props.PostData}/>
       </div>
     );
 }
