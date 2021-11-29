@@ -2,14 +2,6 @@
   margin: 0;
   padding: 0;
 }
-header{
-  max-width: 100%;
-  padding: 30px;
-  background-color:black;
-}
-header a{
-  color:white;
-}
 a{
   text-decoration: none;
   transition: .3s;
@@ -110,6 +102,31 @@ width: 100px;
 .Dialogs_UserList ul li a:hover{
   color:grey;
 }
-{
 
+header{
+  max-width: 100%;
+  padding: 30px 10%;
+  background-color:black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__right-side p {
+  color:white;
+}
+header a{
+  color:white;
+}
+.fiends-online{
+  display: flex;
+}
+.fiends-online li{
+  color:white;
+  padding: 10px;
+  text-align: center;
+}
+.fiends-online li img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }

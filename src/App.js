@@ -10,10 +10,10 @@ const App = (props) => {
     return (
         <BrowserRouter>
             <div className="App">
-                <Header/>
-                 <Route path='/profile' render={ ()=> <Profile PostData={props.PostData}/> }/>
-                 <Route path='/messages' render={ ()=> <Dialogs DialogData={props.DialogData} UserData={props.UserData}/>}/>
-                <Route path='/friend' render={ ()=> <Profile PostData={props.PostData}/> }/>
+                <Header state={props.state.Header}/>
+                 <Route path='/profile' render={ ()=> <Profile state={props.state.ProfilePage}/> }/>
+                 <Route path='/messages' render={ ()=> <Dialogs state={props.state.DialogPage} />}/>
+                <Route path='/friend' render={ ()=> <Profile state={props.state.ProfilePage}/> }/>
 
                 <Navbar/>
             </div>
