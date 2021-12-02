@@ -1,13 +1,15 @@
 import React from 'react';
 
 const NewPost = () =>{
-    return<>
+    let newPostText = React.createRef();
+    let text = () =>{alert(newPostText.current.value)};
+    let clearePostText = () => {newPostText.current.value =''};
+    return(
         <div className="newPost-side">
-            <textarea ></textarea>
-            <button>New Message</button>
-            <button>cleare</button>
+            <textarea ref={newPostText}></textarea>
+            <button onClick={text}>New Message</button>
+            <button onClick={clearePostText}>cleare</button>
         </div>
-
-    </>
+    )
 }
 export default NewPost;
