@@ -1,9 +1,9 @@
 let state = {
     ProfilePage : {
         PostData : [
-            { message : 'Первое сообщение' ,  likeCount : '0'},
-            { message : '212321312312312' ,  likeCount : '2'},
-            { message : '312312312312' ,  likeCount : '3'}
+            {id:1, message : 'Первое сообщение' ,  likeCount : '0'},
+            {id:2, message : '212321312312312' ,  likeCount : '2'},
+            {id:3, message : '312312312312' ,  likeCount : '3'}
         ]
     },
     DialogPage : {
@@ -51,5 +51,9 @@ let state = {
     }
 
 }
-
+export let addNewPost = (NewPostText) =>{
+    let NewPost = {id:4 ,message : NewPostText ,  likeCount: '221312312'}
+    state.ProfilePage.PostData.push(NewPost);
+    console.log(state.ProfilePage.PostData)
+}
 export default state;
