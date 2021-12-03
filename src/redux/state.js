@@ -6,7 +6,8 @@ let state = {
             {id:1, message : 'Первое сообщение' ,  likeCount : '0'},
             {id:2, message : '212321312312312' ,  likeCount : '2'},
             {id:3, message : '312312312312' ,  likeCount : '3'}
-        ]
+        ],
+        NewPostText : 'post-text-1'
     },
     DialogPage : {
         DialogData : [
@@ -53,10 +54,15 @@ let state = {
     }
 
 }
-export let addNewPost = (NewPostText) =>{
-    let NewPost = {id:4 ,message : NewPostText ,  likeCount: '221312312'}
-
+export let addNewPost = () =>{
+    let NewPost = {id:4 ,message : state.ProfilePage.NewPostText ,  likeCount: '0'}
     state.ProfilePage.PostData.push(NewPost);
+    state.ProfilePage.NewPostText = '';
+    rerenderALlTree(state);
+
+}
+export let updateNewPostText = (NewText) =>{
+    state.ProfilePage.NewPostText = NewText;
     rerenderALlTree(state);
 }
 export default state;
