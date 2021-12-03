@@ -1,3 +1,5 @@
+import {rerenderALlTree} from "../render";
+
 let state = {
     ProfilePage : {
         PostData : [
@@ -53,7 +55,8 @@ let state = {
 }
 export let addNewPost = (NewPostText) =>{
     let NewPost = {id:4 ,message : NewPostText ,  likeCount: '221312312'}
+
     state.ProfilePage.PostData.push(NewPost);
-    console.log(state.ProfilePage.PostData)
+    rerenderALlTree(state);
 }
 export default state;
