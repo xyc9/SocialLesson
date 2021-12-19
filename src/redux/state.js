@@ -1,5 +1,6 @@
-import {rerenderALlTree} from "../render";
-
+let rerenderALlTree = () =>{
+    console.log(123123)
+}
 let state = {
     ProfilePage : {
         PostData : [
@@ -54,15 +55,18 @@ let state = {
     }
 
 }
-export let addNewPost = () =>{
+export const addNewPost = () =>{
     let NewPost = {id:4 ,message : state.ProfilePage.NewPostText ,  likeCount: '0'}
     state.ProfilePage.PostData.push(NewPost);
     state.ProfilePage.NewPostText = '';
-    rerenderALlTree(state);
+    rerenderALlTree();
 
 }
-export let updateNewPostText = (NewText) =>{
+export const updateNewPostText = (NewText) =>{
     state.ProfilePage.NewPostText = NewText;
-    rerenderALlTree(state);
+    rerenderALlTree();
+}
+export const subscribe = (observer) => {
+    rerenderALlTree = observer;
 }
 export default state;

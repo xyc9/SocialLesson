@@ -14,7 +14,6 @@ const Dialogs = (props) => {
                 </ul>
             </div>
             <div className="Dialogs_message">
-
                 <ul>
                     {DialogArray}
                 </ul>
