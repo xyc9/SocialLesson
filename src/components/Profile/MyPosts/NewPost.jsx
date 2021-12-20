@@ -1,8 +1,10 @@
 import React from 'react';
 
 const NewPost = (props) =>{
+
     let newPostText = React.createRef();
     let addPost = () => {
+
         props.addNewPost();
     };
     let OnPostChange = () =>{
