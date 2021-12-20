@@ -5,10 +5,11 @@ import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = (props) => {
 
+
     return (
         <div className="profile">
             <MyInfo/>
-            <MyPosts PostData={props.state.PostData} NewPostText={props.state.NewPostText} addNewPost={props.addNewPost} updateNewPostText={props.updateNewPostText}/>
+            <MyPosts PostData={props.state.PostData} dispatch={props.dispatch} NewPostText={props.state.NewPostText}/>
         </div>
     )
 }

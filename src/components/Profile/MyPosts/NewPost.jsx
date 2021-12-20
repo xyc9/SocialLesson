@@ -4,13 +4,12 @@ const NewPost = (props) =>{
 
     let newPostText = React.createRef();
     let addPost = () => {
-
-        props.addNewPost();
+        props.dispatch({type: 'ADD-NEW-POST'});
     };
+
     let OnPostChange = () =>{
         let text =  newPostText.current.value;
-        props.updateNewPostText(text);
-
+            props.dispatch({type: 'UPDATE-NEW-POST-TEXT', NewText: text})
     }
     return(
         <div className="newPost-side">

@@ -3,9 +3,10 @@ import NewPost from "./NewPost";
 import PostsList from "./Posts-list";
 
 const MyPosts = (props) =>{
+
     return (
       <div>
-        <NewPost addNewPost={props.addNewPost} NewPostText={props.NewPostText} updateNewPostText={props.updateNewPostText}/>
+        <NewPost NewPostText={props.NewPostText} dispatch={props.dispatch}/>
         <PostsList PostData={props.PostData}/>
       </div>
     );
