@@ -1,3 +1,5 @@
+const ADD_NEW_POST = 'ADD-NEW-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 let store = {
     _state: {
         ProfilePage: {
@@ -69,18 +71,23 @@ let store = {
         this._callSubscriber = observer;
     },
     dispatch(action) {
-        if (action.type === 'ADD-NEW-POST') {
+        if (action.type === ADD_NEW_POST) {
             let NewPost = {id: 4, message: this._state.ProfilePage.NewPostText, likeCount: '0'}
             this._state.ProfilePage.PostData.push(NewPost);
             this._state.ProfilePage.NewPostText = '';
             this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.ProfilePage.NewPostText = action.NewText;
             this._callSubscriber(this._state);
         }
     }
 }
-
+export let addPostActionCreator = () =>{
+    return({type: ADD_NEW_POST})
+}
+export let updateNewPostTextActionCreator = (text)=> {
+    return({type:UPDATE_NEW_POST_TEXT , NewText: text})
+}
 
 export default store;
 window.store = store;
