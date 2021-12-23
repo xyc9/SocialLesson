@@ -1,5 +1,8 @@
 const ADD_NEW_POST = 'ADD-NEW-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const CLEARE_TEXT = 'CLEARE-TEXT'
+const ADD_NEW_MESSAGE = 'ADD-NEW-MESSAGE'
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY'
 let store = {
     _state: {
         ProfilePage: {
@@ -35,7 +38,8 @@ let store = {
                 {
                     id: '3', username: 'user3'
                 }
-            ]
+            ],
+            NewMessageText : 'qwe'
         },
         Header: {
             FriendsOnline: [
@@ -79,6 +83,17 @@ let store = {
         } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.ProfilePage.NewPostText = action.NewText;
             this._callSubscriber(this._state);
+        } else if  (action.type === CLEARE_TEXT) {
+            this._state.ProfilePage.NewPostText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === ADD_NEW_MESSAGE) {
+            let NewPost = {id: '1', message: this._state.DialogPage.NewMessageText}
+            this._state.DialogPage.DialogData.push(NewPost);
+            this._state.DialogPage.NewMessageText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY){
+            this._state.DialogPage.NewMessageText = action.NewMessageBody;
+            this._callSubscriber(this._state)
         }
     }
 }
@@ -87,6 +102,15 @@ export let addPostActionCreator = () =>{
 }
 export let updateNewPostTextActionCreator = (text)=> {
     return({type:UPDATE_NEW_POST_TEXT , NewText: text})
+}
+export let addMessageActionCreator = () =>{
+    return({type: ADD_NEW_MESSAGE})
+}
+export let updateNewMessageBody = (text)=>{
+    return({type:UPDATE_NEW_MESSAGE_BODY, NewMessageBody : text})
+}
+export let cleareTextActionCreator = ()=> {
+    return({type:CLEARE_TEXT})
 }
 
 export default store;

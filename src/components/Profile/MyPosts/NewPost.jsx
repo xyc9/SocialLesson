@@ -1,5 +1,5 @@
 import React from 'react';
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
+import {addPostActionCreator, updateNewPostTextActionCreator , cleareTextActionCreator} from "../../../redux/state";
 
 
 const NewPost = (props) =>{
@@ -13,11 +13,14 @@ const NewPost = (props) =>{
         let text =  newPostText.current.value;
             props.dispatch(updateNewPostTextActionCreator(text))
     }
+    let CleareText = ()=>{
+        props.dispatch(cleareTextActionCreator());
+    }
     return(
         <div className="newPost-side">
             <textarea ref={newPostText} onChange={OnPostChange} value={props.NewPostText}/>
             <button onClick={ addPost }>New Message</button>
-            <button>cleare</button>
+            <button onClick={ CleareText}>cleare</button>
         </div>
     )
 }
