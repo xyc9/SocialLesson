@@ -3,7 +3,7 @@ import FriendOnline from "./FrinedOnline";
 
 
 const Header = (props) => {
-    let FiendsOnline = props.state.FriendsOnline.map( f => <li><FriendOnline id={f.id} name={f.name} avatar={f.avatar}/></li>)
+    let Online = props.state.FriendsOnline.map( f => <li><FriendOnline id={f.id} name={f.name} avatar={f.avatar}/></li>)
     return (
         <header>
             <ul>
@@ -13,8 +13,7 @@ const Header = (props) => {
                 <p>Друзья Онлайн:</p>
 
             <ul className="fiends-online">
-
-                {FiendsOnline}
+                {Online}
             </ul>
             </div>
         </header>

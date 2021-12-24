@@ -1,8 +1,7 @@
-const ADD_NEW_POST = 'ADD-NEW-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const CLEARE_TEXT = 'CLEARE-TEXT'
-const ADD_NEW_MESSAGE = 'ADD-NEW-MESSAGE'
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY'
+import DialogsReducer from "./dialogs-reducer";
+import ProfileReducer from "./profile-reducer";
+
+
 let store = {
     _state: {
         ProfilePage: {
@@ -68,50 +67,16 @@ let store = {
     getState() {
         return this._state;
     },
-    _callSubscriber() {
-        console.log(123123)
-    },
     subscribe(observer) {
         this._callSubscriber = observer;
     },
     dispatch(action) {
-        if (action.type === ADD_NEW_POST) {
-            let NewPost = {id: 4, message: this._state.ProfilePage.NewPostText, likeCount: '0'}
-            this._state.ProfilePage.PostData.push(NewPost);
-            this._state.ProfilePage.NewPostText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.ProfilePage.NewPostText = action.NewText;
-            this._callSubscriber(this._state);
-        } else if  (action.type === CLEARE_TEXT) {
-            this._state.ProfilePage.NewPostText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === ADD_NEW_MESSAGE) {
-            let NewPost = {id: '1', message: this._state.DialogPage.NewMessageText}
-            this._state.DialogPage.DialogData.push(NewPost);
-            this._state.DialogPage.NewMessageText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_MESSAGE_BODY){
-            this._state.DialogPage.NewMessageText = action.NewMessageBody;
-            this._callSubscriber(this._state)
-        }
+        this._state.DialogPage = DialogsReducer(this._state.DialogPage, action);
+        this._state.ProfilePage = ProfileReducer(this._state.ProfilePage, action);
+        this._callSubscriber(this._state);
     }
 }
-export let addPostActionCreator = () =>{
-    return({type: ADD_NEW_POST})
-}
-export let updateNewPostTextActionCreator = (text)=> {
-    return({type:UPDATE_NEW_POST_TEXT , NewText: text})
-}
-export let addMessageActionCreator = () =>{
-    return({type: ADD_NEW_MESSAGE})
-}
-export let updateNewMessageBody = (text)=>{
-    return({type:UPDATE_NEW_MESSAGE_BODY, NewMessageBody : text})
-}
-export let cleareTextActionCreator = ()=> {
-    return({type:CLEARE_TEXT})
-}
+
 
 export default store;
 window.store = store;
