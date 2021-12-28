@@ -29,7 +29,7 @@ export let addPostActionCreator = () =>{
     return({type: ADD_NEW_POST})
 }
 export let updateNewPostTextActionCreator = (text)=> {
-    return({type:UPDATE_NEW_POST_TEXT , NewText: text})
+    return ({type:UPDATE_NEW_POST_TEXT , NewText: text})
 }
 
 export default ProfileReducer;

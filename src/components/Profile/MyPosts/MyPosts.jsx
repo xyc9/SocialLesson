@@ -6,7 +6,7 @@ const MyPosts = (props) =>{
 
     return (
       <div>
-        <NewPost NewPostText={props.NewPostText} dispatch={props.dispatch}/>
+        <NewPost OnAddPost={props.OnAddPost} OnPostChange={props.OnPostChange} NewPostText={props.NewPostText} />
         <PostsList PostData={props.PostData}/>
       </div>
     );

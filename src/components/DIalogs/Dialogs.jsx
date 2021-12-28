@@ -1,19 +1,18 @@
 import React from 'react';
 import UserDialog from "./UserDialog/UserDialog";
 import UserItem from "./UserItem/UserItem";
-import {addMessageActionCreator, updateNewMessageBody} from "../../redux/dialogs-reducer";
 
 const Dialogs = (props) => {
 
-    let UserArray = props.state.UserData.map( (u) => <li><UserItem id={u.id} username={u.username}/></li>);
-    let DialogArray = props.state.DialogData.map( (d) => <li><UserDialog message={d.message} id={d.id}/></li>);
+    let UserArray = props.DialogPage.UserData.map( (u) => <li><UserItem id={u.id} username={u.username}/></li>);
+    let DialogArray = props.DialogPage.DialogData.map( (d) => <li><UserDialog message={d.message} id={d.id}/></li>);
 
     let OnMessageBodyChange = (e) =>{
         let NewMessageBody =  e.target.value;
-        props.dispatch(updateNewMessageBody(NewMessageBody));
+        props.OnMessageBodyChange(NewMessageBody);
     }
     let addMessage = () => {
-        props.dispatch(addMessageActionCreator());
+        props.OnAddMessage();
     };
     return (
         <div className="Dialogs_page">
@@ -27,7 +26,7 @@ const Dialogs = (props) => {
                     {DialogArray}
                 </ul>
                 <div>
-                    <textarea value={props.state.NewMessageText} onChange={OnMessageBodyChange}> </textarea>
+                    <textarea value={props.DialogPage.NewMessageText} onChange={OnMessageBodyChange}> </textarea>
                     <button onClick={addMessage}> отправить</button>
                 </div>
             </div>
