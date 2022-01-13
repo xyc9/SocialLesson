@@ -1,9 +1,6 @@
 import React from 'react';
-import FriendOnline from "./FrinedOnline";
 
-
-const Header = (props) => {
-    let Online = props.state.FriendsOnline.map( f => <li><FriendOnline id={f.id} name={f.name} avatar={f.avatar}/></li>)
+const Header = () => {
     return (
         <header>
             <ul>
@@ -13,7 +10,6 @@ const Header = (props) => {
                 <p>Друзья Онлайн:</p>
 
             <ul className="fiends-online">
-                {Online}
             </ul>
             </div>
         </header>

@@ -7,12 +7,12 @@ import { Route} from "react-router-dom";
 import DialogsContainer from "./components/DIalogs/DialogsContainer";
 
 
-const App = (props) => {
+const App = () => {
     return (
             <div className="App">
-                <Header state={props.state.Header}/>
-                 <Route path='/profile' render={ ()=> <Profile store={props.store}/> }/>
-                 <Route path='/messages' render={ ()=> <DialogsContainer store={props.store}/>}/>
+                <Header />
+                 <Route path='/profile' render={ ()=> <Profile /> }/>
+                 <Route path='/messages' render={ ()=> <DialogsContainer />}/>
                 <Navbar/>
             </div>
     );
