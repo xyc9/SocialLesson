@@ -3,7 +3,7 @@ import UserDialog from "./UserDialog/UserDialog";
 import UserItem from "./UserItem/UserItem";
 
 const Dialogs = (props) => {
-    
+
     let UserArray = props.DialogPage.UserData.map( (u) => <li><UserItem id={u.id} username={u.username}/></li>);
     let DialogArray = props.DialogPage.DialogData.map( (d) => <li><UserDialog message={d.message} id={d.id}/></li>);
 
