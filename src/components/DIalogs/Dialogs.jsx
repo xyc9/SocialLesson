@@ -4,8 +4,8 @@ import UserItem from "./UserItem/UserItem";
 
 const Dialogs = (props) => {
 
-    let UserArray = props.DialogPage.UserData.map( (u) => <li><UserItem id={u.id} username={u.username}/></li>);
-    let DialogArray = props.DialogPage.DialogData.map( (d) => <li><UserDialog message={d.message} id={d.id}/></li>);
+    let UserArray = props.DialogPage.UserData.map( (u) => <li key={u.id}><UserItem id={u.id}  username={u.username}/></li>);
+    let DialogArray = props.DialogPage.DialogData.map( (d) => <li  key={d.id}><UserDialog message={d.message} id={d.id}/></li>);
 
     let OnMessageBodyChange = (e) =>{
         let NewMessageBody =  e.target.value;
