@@ -134,3 +134,43 @@ header a{
   height: 50px;
   border-radius: 50%;
 }
+.Users_page{
+  width: 80%;
+  margin:0 auto;
+}
+.Users_list{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  padding: 10px;
+
+}
+.Users_list .User_item{
+  display: grid;
+  grid-template-columns: 2fr 6fr;
+  padding: 10px 0;
+  border:1px solid #333;
+  border-radius: 20px;
+}
+.Users_list .User_item .userItem_left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Users_list .User_item .userItem_left *{
+  cursor: pointer;
+}
+.UserAva img{
+  width: 100px;
+  height: 100px;
+}
+.Users_list .User_item .userItem_right{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  align-items: center;
+
+}
