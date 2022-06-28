@@ -6,7 +6,6 @@ let initialState = {
     users: []
 }
 let UsersReducer = (state = initialState, action) => {
-    debugger;
     switch (action.type) {
 
         case FOLLOW :
