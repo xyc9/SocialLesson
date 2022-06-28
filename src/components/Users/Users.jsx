@@ -2,14 +2,19 @@ import React from "react";
 import * as axios from "axios";
 import avatar from "../../img/avatar-default.jpg";
 
+
+
 const Users = (props) => {
-    if (props.users.length === 0) {
-        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
-            props.setUsers(response.data.items);
-        })
+    let getUsers = () =>{
+        if (props.users.length === 0) {
+            axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+                props.setUsers(response.data.items);
+            })
+        }
     }
     return (
         <div className="Users_page">
+            <button onClick={getUsers}>загрузить пользователей</button>
             <div className="Users_list">
                 {props.users.map(u => <div key={u.id} className="User_item">
                     <div className="userItem_left">
