@@ -172,5 +172,23 @@ header a{
   justify-content: space-between;
   width: 80%;
   align-items: center;
+}
+.selectedPage{
+  font-weight: bold;
+  background-color: #333333;
+  color:white;
 
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 110px;
+}
+.pagination span{
+  transition: 0.3s;
+padding: 5px 11px;
+  margin:5px 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid #333333;
 }
