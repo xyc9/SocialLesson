@@ -1,16 +1,15 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header>
             <ul>
                 <li><a href="http://localhost:3000/">LOGO</a></li>
             </ul>
             <div className="header__right-side">
-                <p>Друзья Онлайн:</p>
+                {props.isAuth ? props.login : <NavLink to='/login'>Login</NavLink>}
 
-            <ul className="fiends-online">
-            </ul>
             </div>
         </header>
     )
